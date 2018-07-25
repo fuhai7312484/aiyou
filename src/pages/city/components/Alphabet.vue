@@ -12,7 +12,6 @@ v-for="item of letter"
 @click="handClick"
 >{{item}}</li>
 </ul>
-    
 </template>
 <script>
 export default {
@@ -25,12 +24,10 @@ export default {
             touchStatus:false,
             startY:0,
             timer:0,
-         
         }
     },
     updated() {
         this.startY = this.$refs['1'].offsetTop
-      
     },
     computed:{
         letter(){
@@ -40,8 +37,6 @@ export default {
             }
             return letters;
         }
-
-
     },
     methods: {
         handClick(ev){
@@ -56,23 +51,15 @@ export default {
                     clearTimeout(this.timer)
                 }
                 this.timer = setTimeout(()=>{
-                 
                     const touchY = ev.touches[0].clientY
                     const index =Math.floor((touchY-this.startY)/20)
                     this.$emit('change',this.letter[index])
-
                 },16.7)
-      
-         
             }
-
         },
         touchEnd(){
             this.touchStatus = false;
-           
-
         }
-
     }
 }
 </script>
