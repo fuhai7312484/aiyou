@@ -3,7 +3,13 @@
     <home-header></home-header>
     <home-swiper :swiperList="swiperList"></home-swiper>
     <home-icons :iconList="iconList"></home-icons>
+
+ <router-link to="/scancode">
+二维码扫码
+</router-link>
+
     <home-recommend :recommendList="recommendList"></home-recommend>
+   
     <home-weekend :weekendList="weekendList"></home-weekend>
     </div>
 </template>
